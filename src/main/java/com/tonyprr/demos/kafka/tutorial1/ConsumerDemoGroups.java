@@ -1,4 +1,4 @@
-package com.tonyprr.demos.kafka;
+package com.tonyprr.demos.kafka.tutorial1;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
