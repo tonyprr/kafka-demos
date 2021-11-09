@@ -1,4 +1,4 @@
-package com.tonyprr.demos.kafka.tutorial1;
+package kafka.tutorial1;
 
 import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.StringSerializer;
@@ -6,13 +6,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Properties;
-import java.util.concurrent.ExecutionException;
 
-public class ProducerDemoKeys {
+public class ProducerDemoWithCallback {
 
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
+    public static void main(String[] args) {
 
-        Logger logger = LoggerFactory.getLogger(ProducerDemoKeys.class);
+        Logger logger = LoggerFactory.getLogger(ProducerDemoWithCallback.class);
 
         String bootstrapServers = "127.0.0.1:9092";
 
@@ -27,14 +26,9 @@ public class ProducerDemoKeys {
 
         for (int i = 0; i < 10; i++) {
             // create a producer record
-            String topic = "first_topic";
-            String value = "Hello World " + i;
-            String key = "id_" + i;
-
             ProducerRecord<String, String> record =
-                    new ProducerRecord<>(topic, key, value);
+                    new ProducerRecord<>("first_topic", "Hello World " + i);
 
-            logger.info("Key: " + key);
             // send data - asynchronous
             producer.send(record, new Callback() {
                 @Override
@@ -51,7 +45,7 @@ public class ProducerDemoKeys {
                         logger.error("Error while producing", e);
                     }
                 }
-            }).get(); // block the .send to make it synchronous - don't do this in production!
+            });
         }
 
         // flush data

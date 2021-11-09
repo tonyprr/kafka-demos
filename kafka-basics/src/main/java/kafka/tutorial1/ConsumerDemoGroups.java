@@ -1,4 +1,4 @@
-package com.tonyprr.demos.kafka.tutorial1;
+package kafka.tutorial1;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -12,13 +12,13 @@ import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
 
-public class ConsumerDemo {
+public class ConsumerDemoGroups {
 
     public static void main(String[] args) {
 
-        Logger logger = LoggerFactory.getLogger(ConsumerDemo.class);
+        Logger logger = LoggerFactory.getLogger(ConsumerDemoGroups.class);
         String bootstrapServers = "127.0.0.1:9092";
-        String groupId = "my-fourth-app";
+        String groupId = "my-fifth-app";
         String topic = "first_topic";
 
         Properties properties = new Properties();

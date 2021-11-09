@@ -1,4 +1,4 @@
-package com.tonyprr.demos.kafka.tutorial2;
+package kafka.tutorial2;
 
 import com.google.common.collect.Lists;
 import com.twitter.hbc.ClientBuilder;
@@ -10,14 +10,11 @@ import com.twitter.hbc.core.endpoint.StatusesFilterEndpoint;
 import com.twitter.hbc.core.processor.StringDelimitedProcessor;
 import com.twitter.hbc.httpclient.auth.Authentication;
 import com.twitter.hbc.httpclient.auth.OAuth1;
-import org.apache.kafka.clients.producer.Callback;
-import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.ProducerConfig;
-import org.apache.kafka.clients.producer.ProducerRecord;
-import org.apache.kafka.clients.producer.RecordMetadata;
+import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.BlockingQueue;
@@ -26,10 +23,10 @@ import java.util.concurrent.TimeUnit;
 
 public class TwitterProducer {
 
-    String consumerKey = "u2L8gTR38ZSD2Af8llReBGk7C";
-    String consumerSecret = "xRxJRqkaQSDZzIso35kRm4CxaaBLFHXhLFrVvKQvBqBFNgjxUI";
-    String token = "41831035-O9TIPtrvokD60LN5R8wIvnhuUqO4CMNx9DBPaURFA";
-    String secret = "SQIKZ5IqoUNmynFwTpzSkl8CA2e9jtf1rrevCRVOCFQCF";
+    String consumerKey = "xxxx";
+    String consumerSecret = "xxxx";
+    String token = "xxxx";
+    String secret = "xxxxx";
     Logger logger = LoggerFactory.getLogger(TwitterProducer.class);
 
     List<String> terms = Lists.newArrayList("bitcoin", "solidity", "java", "politics");
